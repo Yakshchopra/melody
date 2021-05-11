@@ -2,8 +2,8 @@ import React from 'react';
 
 const Sidenav = () => {
   return (
-    <div>
-      <h1>Navbar</h1>
+    <div className='h-screen py-4'>
+      <div className='h-full mx-4 rounded-xl bg-bglight w-64'></div>
     </div>
   );
 };

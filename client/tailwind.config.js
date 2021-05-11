@@ -6,6 +6,8 @@ module.exports = {
       colors: {
         dark: '#1D1D27',
         primary: '#7D4BCD',
+        bglight: '#292938',
+        input: '#37374A',
       },
     },
   },
