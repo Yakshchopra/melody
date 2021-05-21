@@ -34,22 +34,22 @@ const Dashboard = () => {
         <div className='mood px-10'>
           <h1 className='text-2xl text-white my-8'>Mood Selector</h1>
           <div className='boxes flex flex-wrap gap-5 justify-center align-middle'>
-            <div className='box w-60 h-32 cursor-pointer items-center justify-center flex rounded-xl box-1'>
+            <div className='box w-60 h-20 cursor-pointer items-center justify-center flex rounded-xl box-1'>
               <span className='text-white text-xl'>Energetic</span>
             </div>
-            <div className='box w-60 h-32 cursor-pointer items-center justify-center flex rounded-xl box-2'>
+            <div className='box w-60 h-20 cursor-pointer items-center justify-center flex rounded-xl box-2'>
               <span className='text-white text-xl'>Happy</span>
             </div>
-            <div className='box w-60 h-32 cursor-pointer items-center justify-center flex rounded-xl box-3'>
+            <div className='box w-60 h-20 cursor-pointer items-center justify-center flex rounded-xl box-3'>
               <span className='text-white text-xl'>Angry</span>
             </div>
-            <div className='box w-60 h-32 cursor-pointer items-center justify-center flex rounded-xl box-4'>
+            <div className='box w-60 h-20 cursor-pointer items-center justify-center flex rounded-xl box-4'>
               <span className='text-white text-xl'>Fear</span>
             </div>
-            <div className='box w-60 h-32 cursor-pointer items-center justify-center flex rounded-xl box-5'>
+            <div className='box w-60 h-20 cursor-pointer items-center justify-center flex rounded-xl box-5'>
               <span className='text-white text-xl'>Sad</span>
             </div>
-            <div className='box w-60 h-32 cursor-pointer items-center justify-center flex rounded-xl box-6'>
+            <div className='box w-60 h-20 cursor-pointer items-center justify-center flex rounded-xl box-6'>
               <span className='text-white text-xl'>Lonely</span>
             </div>
           </div>

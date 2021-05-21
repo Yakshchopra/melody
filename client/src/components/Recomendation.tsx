@@ -1,4 +1,3 @@
-import { Url } from 'node:url';
 import React from 'react';
 import { AiFillHeart, AiFillPlayCircle } from 'react-icons/ai';
 
