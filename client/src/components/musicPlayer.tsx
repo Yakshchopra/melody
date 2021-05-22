@@ -32,6 +32,10 @@ const song = [
 const MusicPlayer = () => {
   const [playing, setPlaying] = useState(false);
   const [songs, setSongs] = useState(0);
+  const [trackIndex, setTrackIndex] = useState(0);
+  const [trackProgress, setTrackProgress] = useState(0);
+
+  const player = document.getElementById('audio_sample');
 
   return (
     <div className='bg-bglight h-80 w-full rounded-xl mt-5 p-2'>
@@ -47,14 +51,17 @@ const MusicPlayer = () => {
         <p className='text-sm mt-1 text-white'>Imagine Dragons</p>
         <div className='playerContainer my-4 px-2'>
           <div className='w-full total bg-white rounded-full relative'>
-            <audio src={song[songs].url} />
+            {/* <audio controls id='audio_sample' src= /> */}
+
             <div className='circle h-3 w-3 rounded-full bg-white absolute top-0 transform -translate-y-1/2 left-0 -translate-x-1/2'></div>
           </div>
           <div className='actions text-white flex text-3xl justify-center gap-6 my-5'>
             <MdSkipPrevious className='cursor-pointer' />
             {playing ? (
               <AiFillPauseCircle
-                onClick={() => setPlaying(!playing)}
+                onClick={() => {
+                  setPlaying(!playing);
+                }}
                 className='text-primary text-4xl cursor-pointer'
               />
             ) : (
