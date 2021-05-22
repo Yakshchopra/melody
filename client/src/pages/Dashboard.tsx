@@ -8,7 +8,7 @@ import Recomendation from '../components/Recomendation';
 const Dashboard = () => {
   return (
     <div className='bg-dark h-screen w-screen flex'>
-      <Sidenav />
+      <Sidenav name='1' />
       <div className='main mt-5 w-full'>
         <div className='headline flex justify-between w-full'>
           <div className='search flex bg-bglight py-2 px-5 rounded-full items-center w-72'>
