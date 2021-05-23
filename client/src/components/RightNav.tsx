@@ -8,8 +8,6 @@ const RightNav = () => {
       <h1 className='text-xl text-white mt-8'>Recently Played</h1>
       <RecentlyPlayed name='Lorem Ipsum' link='abc' />
       <RecentlyPlayed name='Lorem Ipsum' link='abc' />
-      <RecentlyPlayed name='Lorem Ipsum' link='abc' />
-      <RecentlyPlayed name='Lorem Ipsum' link='abc' />
 
       <h1 className='text-xl text-white mt-8'>Playing Now</h1>
       <MusicPlayer />
