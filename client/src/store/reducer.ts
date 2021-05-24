@@ -15,7 +15,7 @@ function reducer(state: any, action: any) {
         ...state,
         recents: action.recents,
       };
-
+    
     default:
       return state;
   }
