@@ -1,73 +1,115 @@
-import React from 'react';
-import Sidenav from '../components/sidenav';
-import { AiOutlineSearch } from 'react-icons/ai';
-import { FaUserCircle } from 'react-icons/fa';
-import RightNav from '../components/RightNav';
-import Recomendation from '../components/Recomendation';
-
+import React, { useEffect, useState } from "react";
+import Sidenav from "../components/sidenav";
+import { AiOutlineSearch } from "react-icons/ai";
+import { FaUserCircle } from "react-icons/fa";
+import RightNav from "../components/RightNav";
+import Recomendation from "../components/Recomendation";
+import SpotifyWebApi from "spotify-web-api-js";
 const Dashboard = () => {
+  const [mood, setMood] = useState("rock");
+  const [hits, setHits] = useState([]);
+  const [itemsPlaylist, setItemsPlaylist] = useState([
+    { track: { name: "", artists: [{ name: "" }], preview_url: "" } },
+  ]);
+  var spotifyApi = new SpotifyWebApi();
+  spotifyApi.setAccessToken(
+    "BQDEjJX7NuyWFZUSfwF-Z2jKqTa2xzrB9Y4modwB_-s7dl4xZ6YThNnvdOfdze6lGURMeeu0Qnt5rJ5jYo2fpnkWEeHCuHF1Z6TINdYGwZLhS3mBaQu-p319envM7RTDyC_yQTEY7S93-nIJ-kQdhDLYE9VYTNHr9HcevrM"
+  );
+
+  useEffect(() => {
+    spotifyApi.getCategoryPlaylists(mood).then(
+      function (data) {
+        //setHits(data.playlists.items);
+
+        spotifyApi
+          .getPlaylistTracks(data.playlists.items[0].id)
+          .then(function (data) {
+            setItemsPlaylist(data.items as any);
+          });
+      },
+      function (err) {
+        console.error(err);
+      }
+    );
+  }, [mood]);
+
   return (
-    <div className='bg-dark h-screen w-screen flex'>
-      <Sidenav name='1' />
-      <div className='main mt-5 w-full'>
-        <div className='headline flex justify-between w-full'>
-          <div className='search flex bg-bglight py-2 px-5 rounded-full items-center w-72'>
-            <AiOutlineSearch className='text-white mr-5' />
+    <div className="bg-dark h-screen w-screen flex">
+      <Sidenav name="1" />
+      <div className="main mt-5 w-full">
+        <div className="headline flex justify-between w-full">
+          <div className="search flex bg-bglight py-2 px-5 rounded-full items-center w-72">
+            <AiOutlineSearch className="text-white mr-5" />
             <input
-              placeholder='search'
-              type='text'
-              className='bg-transparent outline-none text-white w-full'
+              placeholder="search"
+              type="text"
+              className="bg-transparent outline-none text-white w-full"
             />
           </div>
 
           {/* end */}
-          <div className='user flex items-center'>
-            <h1 className='text-white'>Yaksh Chopra</h1>
-            <div className='user-icon'>
-              <FaUserCircle className='text-white text-3xl ml-5' />
+          <div className="user flex items-center">
+            <h1 className="text-white">Yaksh Chopra</h1>
+            <div className="user-icon">
+              <FaUserCircle className="text-white text-3xl ml-5" />
             </div>
           </div>
         </div>
-        <hr className='opacity-20 mt-3'></hr>
+        <hr className="opacity-20 mt-3"></hr>
 
         {/* mood selector */}
-        <div className='mood px-10'>
-          <h1 className='text-2xl text-white my-8'>Mood Selector</h1>
-          <div className='boxes flex flex-wrap gap-5 justify-center align-middle'>
-            <div className='box w-60 h-20 cursor-pointer items-center justify-center flex rounded-xl box-1'>
-              <span className='text-white text-xl'>Energetic</span>
+        <div className="mood px-10">
+          <h1 className="text-2xl text-white my-8">Mood Selector</h1>
+          <div className="boxes flex flex-wrap gap-5 justify-center align-middle">
+            <div
+              onClick={() => setMood("rock")}
+              className="box w-60 h-20 cursor-pointer items-center justify-center flex rounded-xl box-1"
+            >
+              <span className="text-white text-xl">Energetic</span>
             </div>
-            <div className='box w-60 h-20 cursor-pointer items-center justify-center flex rounded-xl box-2'>
-              <span className='text-white text-xl'>Happy</span>
+            <div
+              onClick={() => setMood("pop")}
+              className="box w-60 h-20 cursor-pointer items-center justify-center flex rounded-xl box-2"
+            >
+              <span className="text-white text-xl">Happy</span>
             </div>
-            <div className='box w-60 h-20 cursor-pointer items-center justify-center flex rounded-xl box-3'>
-              <span className='text-white text-xl'>Angry</span>
+            <div
+              onClick={() => setMood("rock")}
+              className="box w-60 h-20 cursor-pointer items-center justify-center flex rounded-xl box-3"
+            >
+              <span className="text-white text-xl">Angry</span>
             </div>
-            <div className='box w-60 h-20 cursor-pointer items-center justify-center flex rounded-xl box-4'>
-              <span className='text-white text-xl'>Fear</span>
+            <div
+              onClick={() => setMood("rock")}
+              className="box w-60 h-20 cursor-pointer items-center justify-center flex rounded-xl box-4"
+            >
+              <span className="text-white text-xl">Fear</span>
             </div>
-            <div className='box w-60 h-20 cursor-pointer items-center justify-center flex rounded-xl box-5'>
-              <span className='text-white text-xl'>Sad</span>
+            <div
+              onClick={() => setMood("rock")}
+              className="box w-60 h-20 cursor-pointer items-center justify-center flex rounded-xl box-5"
+            >
+              <span className="text-white text-xl">Sad</span>
             </div>
-            <div className='box w-60 h-20 cursor-pointer items-center justify-center flex rounded-xl box-6'>
-              <span className='text-white text-xl'>Lonely</span>
+            <div
+              onClick={() => setMood("rock")}
+              className="box w-60 h-20 cursor-pointer items-center justify-center flex rounded-xl box-6"
+            >
+              <span className="text-white text-xl">Lonely</span>
             </div>
           </div>
         </div>
         {/* mood selesctor end */}
-        <div className='list px-10 mt-12'>
-          <h1 className='text-2xl text-white my-8'>Recomendations</h1>
-          <div className=''>
-            <Recomendation
-              name='Lorem Ipsum'
-              singer='Imagine Dragons'
-              link=''
-            />
-            <Recomendation
-              name='Lorem Ipsum'
-              singer='Imagine Dragons'
-              link=''
-            />
+        <div className="list px-10 mt-12">
+          <h1 className="text-2xl text-white my-8">Recomendations</h1>
+          <div className="">
+            {itemsPlaylist.map((item) => (
+              <Recomendation
+                name={item?.track?.name}
+                singer={item.track.artists[0].name}
+                link={item.track.preview_url}
+              />
+            ))}
           </div>
         </div>
       </div>

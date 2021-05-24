@@ -6,59 +6,6 @@ import SpotifyWebApi from "spotify-web-api-js";
 
 const MusicPlayer = () => {
   const [url_song, setUrlSong] = useState("");
-  var spotifyApi = new SpotifyWebApi();
-  spotifyApi.setAccessToken(
-    "BQC1wl0AgZcbvGaW2Ivrh7knapIonItYFOZ8jDNDIjn3qkMsYHP2iYpkMye3XO_TW-2ljS2pWnPw9TDd3ZXBeBeY25SIbe2pXBwNTxnCVbDayHuurf_s-Bt4tQrABSh_oVYPRqeTc9AtjwLVuGejdnWztesqjgZHrCW5FRo"
-  );
-  console.log(spotifyApi);
-
-  spotifyApi.getArtistAlbums(
-    "43ZHCT0cAZBISjO8DG9PnE",
-    function (err: any, data: any) {
-      if (err) console.error(err);
-      else console.log("Artist albums", data);
-    }
-  );
-
-  //spotifyApi.setPromiseImplementation(Q);
-
-  // get Elvis' albums, using Promises through Promise, Q or when
-  spotifyApi.getArtistAlbums("43ZHCT0cAZBISjO8DG9PnE").then(
-    function (data) {
-      console.log("Artist albums", data);
-    },
-    function (err) {
-      console.error(err);
-    }
-  );
-
-  spotifyApi.getArtistAlbums(
-    "43ZHCT0cAZBISjO8DG9PnE",
-    { limit: 10, offset: 20 }
-    // function (err, data) {
-    //   if (err) console.error(err);
-    //   else console.log("Artist albums", data);
-    // }
-  );
-  //spotifyApi.setPromiseImplementation(Q);
-  // using Promises through Promise, Q or when - get Elvis' albums in range [20...29]
-  spotifyApi
-    .getArtistAlbums("43ZHCT0cAZBISjO8DG9PnE", { limit: 10, offset: 20 })
-    .then(
-      function (data) {
-        //console.log(data.items[0].id);
-        var t = spotifyApi.getAlbumTracks(String(data.items[0].id));
-        t.then(function (result) {
-          const temp = result.items[0].preview_url;
-          console.log(url_song);
-        });
-        //console.log(t.then.name);
-        //console.log(data.items[0].external_urls.spotify);
-      },
-      function (err) {
-        console.error(err);
-      }
-    );
 
   const song = [
     {
