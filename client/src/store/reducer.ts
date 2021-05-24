@@ -1,6 +1,7 @@
 export const initialState = {
   user: null,
   recents: null,
+  playingNow: null,
 };
 
 function reducer(state: any, action: any) {
@@ -14,6 +15,11 @@ function reducer(state: any, action: any) {
       return {
         ...state,
         recents: action.recents,
+      };
+    case 'SET_PLAYING':
+      return {
+        ...state,
+        playingNow: action.playingNow,
       };
     
     default:

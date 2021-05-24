@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
 import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
+import { useStateValue } from "../store/stateProvider.js";
+
 import SpotifyWebApi from "spotify-web-api-js";
 //import Q from "q";
 

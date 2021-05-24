@@ -13,7 +13,7 @@ const Dashboard = () => {
   ]);
   var spotifyApi = new SpotifyWebApi();
   spotifyApi.setAccessToken(
-    "BQDEjJX7NuyWFZUSfwF-Z2jKqTa2xzrB9Y4modwB_-s7dl4xZ6YThNnvdOfdze6lGURMeeu0Qnt5rJ5jYo2fpnkWEeHCuHF1Z6TINdYGwZLhS3mBaQu-p319envM7RTDyC_yQTEY7S93-nIJ-kQdhDLYE9VYTNHr9HcevrM"
+    "BQA_KmxdxF-TIBpx9ECf8xasMI68YUnaA6FApp5IVnFWAt7cnJMySwRXwnrzYjPNkoJ_VEPbGJV0uWS7LO5PZEVNCI9OOxnUKKJnPxa6t5I3uQJkc1RXeySrAGFXHAbmYQkSXHjTBN1xw7XC5Mixv_QP1MkBAyNVsZwSDLU"
   );
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const Dashboard = () => {
   }, [mood]);
 
   return (
-    <div className="bg-dark h-screen w-screen flex">
+    <div className="bg-dark h-screen pr-80 flex pl-72 overflow-x-hidden">
       <Sidenav name="1" />
       <div className="main mt-5 w-full">
         <div className="headline flex justify-between w-full">
@@ -110,6 +110,7 @@ const Dashboard = () => {
                 link={item.track.preview_url}
               />
             ))}
+            { console.log(itemsPlaylist)}
           </div>
         </div>
       </div>

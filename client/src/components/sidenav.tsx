@@ -7,7 +7,7 @@ import { BiLogOut } from "react-icons/bi";
 import Sidenavitem from "../components/sidenavitem";
 const Sidenav = (props: { name: string }) => {
   return (
-    <div className="h-screen py-4">
+    <div className="h-screen py-4 fixed left-0">
       <div className="h-full mx-4 rounded-xl bg-bglight w-64">
         <img className="h-28 mx-14" src={logo_small} alt="Logo" />
         <div className="my-14 ">
