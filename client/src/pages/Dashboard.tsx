@@ -13,7 +13,7 @@ const Dashboard = () => {
   ]);
   var spotifyApi = new SpotifyWebApi();
   spotifyApi.setAccessToken(
-    "BQA_KmxdxF-TIBpx9ECf8xasMI68YUnaA6FApp5IVnFWAt7cnJMySwRXwnrzYjPNkoJ_VEPbGJV0uWS7LO5PZEVNCI9OOxnUKKJnPxa6t5I3uQJkc1RXeySrAGFXHAbmYQkSXHjTBN1xw7XC5Mixv_QP1MkBAyNVsZwSDLU"
+    "BQAb_EhM4ameSyZjk6d88VgeNV3xvZ0uGl37d35WhfpxyffWHocQzrVv2gQSB-mNd1W_tAdf61xrJo9YCHj5rSWygca81KM3ACHGzQFMfdt_JOemtz2LO_wLg0jKEptjycdF8W2xRiLuf7-GucLKgbd70Dbn004bpd7Zgik"
   );
 
   useEffect(() => {
@@ -110,7 +110,7 @@ const Dashboard = () => {
                 link={item.track.preview_url}
               />
             ))}
-            { console.log(itemsPlaylist)}
+            {console.log(itemsPlaylist)}
           </div>
         </div>
       </div>
